@@ -62,8 +62,8 @@ public class FlatFileReader {
 				String zip = fileReader.next();
 				String country = fileReader.next();
 				Address customerAddress = new Address(street, city, state, zip, country);
-				Customer customer = new Customer(customerCode, type, name, customerAddress);
-				customerArray.add(fileReader.next());
+				//Customer customer = new Customer(customerCode, type, name, customerAddress);
+				//customerArray.add(fileReader.next());
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
