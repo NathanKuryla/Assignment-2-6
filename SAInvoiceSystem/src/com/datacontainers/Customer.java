@@ -1,13 +1,15 @@
 package com.datacontainers;
 
+import java.util.ArrayList;
+
 public class Customer {
 	private String customerCode;
 	private String type;
 	private Person contact;
-	private Name name;
+	private String name;
 	private Address address;
 
-	public Customer(String customerCode, String type, Person contact, Name name, Address address) {
+	public Customer(String customerCode, String type, Person contact, String name, Address address) {
 		super();
 		this.customerCode = customerCode;
 		this.type = type;
@@ -40,11 +42,11 @@ public class Customer {
 		this.contact = contact;
 	}
 
-	public Name getName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(Name name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
@@ -55,5 +57,4 @@ public class Customer {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-
 }

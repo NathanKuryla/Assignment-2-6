@@ -1,20 +1,21 @@
 package com.datacontainers;
+import java.util.Date;
 
 public class SaleAgreements extends Product {
-	private String date;
+	private Date date;
 	private Address address;
 	
-	public SaleAgreements(String productCode, String type, String date, Address address) {
+	public SaleAgreements(String productCode, String type, Date date, Address address) {
 		super(productCode, type);
 		this.date = date;
 		this.address = address;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
