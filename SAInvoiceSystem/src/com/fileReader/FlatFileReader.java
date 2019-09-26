@@ -56,7 +56,7 @@ public class FlatFileReader {
 		return personArray;
 
 	}
-
+	//Method not working??????????????
 	public Person getPersonFromCode(String personCode) {
 		for (Person p : personArray) {
 			if (p.getPersonCode().equals(personCode)) {
