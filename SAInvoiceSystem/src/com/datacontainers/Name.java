@@ -4,12 +4,15 @@ public class Name {
 	private String firstName;
 	private String lastName;
 
+	/** Creates Name Constructor with specified attributes */
 	public Name(String firstName, String lastName) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
 
+	/** Getter and Setter Methods for Name Class */
+	
 	public String getFirstName() {
 		return firstName;
 	}

@@ -6,17 +6,19 @@ public class Person {
 	private String personCode;
 	private Name name;
 	private Address address;
-	//private ArrayList<String> email;
-	private String email;
+	private ArrayList<String> emails;
 
-	public Person(String personCode, Name name, Address address, /*ArrayList<String>*/ String email) {
+	/** Creates Person Constructor with specified attributes */
+	public Person(String personCode, Name name, Address address, ArrayList<String> emails) {
 		super();
 		this.personCode = personCode;
 		this.name = name;
 		this.address = address;
-		this.email = email;
+		this.emails = emails;
 	}
 
+	/** Getter and Setter Methods for Person Class */
+	
 	public String getPersonCode() {
 		return personCode;
 	}
@@ -41,21 +43,17 @@ public class Person {
 		this.address = address;
 	}
 
-	public /*ArrayList<String>*/ String getEmail() {
-		return email;
+	public ArrayList<String> getEmail() {
+		return emails;
 	}
 
-	public void setEmail(/*ArrayList<String>*/ String email) {
-		this.email = email;
-	}
-
-	@Override
-	public String toString() {
-		return "Person [personCode=" + personCode + ", name=" + name + ", address=" + address + ", email=" + email
-				+ "]";
+	public void setEmail(ArrayList<String> emails) {
+		this.emails = emails;
 	}
 	
-	//public ArrayList<String> readEmail() {
-	//}
-
+	/** Reads e-mails  */
+	public String readEmail() {
+		return null;
+	}
+	
 }

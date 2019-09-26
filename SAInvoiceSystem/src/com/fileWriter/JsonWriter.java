@@ -8,6 +8,8 @@ import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 
 public class JsonWriter {
+	
+	/** Writes Person objects in JSON format */
 	public String toJsonStringPerson(ArrayList<Person> jsonPersonArray) {
 	Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	String jsonString = gson.toJson(jsonPersonArray);
@@ -15,6 +17,7 @@ public class JsonWriter {
 	return jsonString;
 	}
 	
+	/** Writes Customer objects in JSON format */
 	public String toJsonStringCustomer(ArrayList<Customer> jsonCustomerArray) {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		String jsonString = gson.toJson(jsonCustomerArray);
@@ -22,6 +25,7 @@ public class JsonWriter {
 		return jsonString;
 		}
 	
+	/** Writes Product objects in JSON format */
 	public String toJsonStringProduct(ArrayList<Product> jsonProductArray) {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		String jsonString = gson.toJson(jsonProductArray);

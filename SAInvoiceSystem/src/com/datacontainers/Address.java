@@ -7,6 +7,7 @@ public class Address {
 	private String zipCode;
 	private String country;
 
+	/** Creates Address Constructor with specified attributes */
 	public Address(String street, String city, String state, String zipCode, String country) {
 		super();
 		this.street = street;
@@ -16,6 +17,8 @@ public class Address {
 		this.country = country;
 	}
 
+	/** Getter and Setter Methods for Address Class */
+	
 	public String getStreet() {
 		return street;
 	}

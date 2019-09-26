@@ -4,12 +4,15 @@ public class Product {
 	private String productCode;
 	private String type;
 
+	/** Creates Product Constructor with specified attributes */
 	public Product(String productCode, String type) {
 		super();
 		this.productCode = productCode;
 		this.type = type;
 	}
-
+	
+	/** Getter and Setter Methods for Product Class */
+	
 	public String getProductCode() {
 		return productCode;
 	}
@@ -26,4 +29,10 @@ public class Product {
 		this.type = type;
 	}
 
+	@Override
+	public String toString() {
+		return "Product [productCode=" + productCode + ", type=" + type + "]";
+	}
+
+	
 }

@@ -8,6 +8,7 @@ public class LeaseAgreements extends Product {
 	private String name;
 	private String pricePerAppt;
 
+	/** Creates LeaseAgreements Constructor with specified attributes */
 	public LeaseAgreements(String productCode, String type, DateTime startDate, DateTime endDate, Address address,
 			String name, String pricePerAppt) {
 		super(productCode, type);
@@ -18,6 +19,8 @@ public class LeaseAgreements extends Product {
 		this.pricePerAppt = pricePerAppt;
 	}
 
+	/** Getter and Setter Methods for LeaseAgreements Class */
+	
 	public DateTime getStartDate() {
 		return startDate;
 	}
@@ -56,6 +59,12 @@ public class LeaseAgreements extends Product {
 
 	public void setPricePerAppt(String pricePerAppt) {
 		this.pricePerAppt = pricePerAppt;
+	}
+
+	@Override
+	public String toString() {
+		return "LeaseAgreements [startDate=" + startDate + ", endDate=" + endDate + ", address=" + address + ", name="
+				+ name + ", pricePerAppt=" + pricePerAppt + "]";
 	}
 	
 }

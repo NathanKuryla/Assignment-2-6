@@ -4,11 +4,14 @@ public class Amenity extends Product {
 	private String amenityName;
 	private String cost;
 
+	/** Creates Amenity Constructor with specified attributes */
 	public Amenity(String productCode, String type, String amenityName, String cost) {
 		super(productCode, type);
 		this.amenityName = amenityName;
 		this.cost = cost;
 	}
+
+	/** Getter and Setter Methods for Amenity Class */
 
 	public String getName() {
 		return amenityName;
@@ -25,5 +28,5 @@ public class Amenity extends Product {
 	public void setCost(String cost) {
 		this.cost = cost;
 	}
-	
+
 }

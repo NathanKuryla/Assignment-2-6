@@ -6,6 +6,7 @@ public class SaleAgreements extends Product {
 	private Address address;
 	private String cost;
 	
+	/** Creates SaleAgreements Constructor with specified attributes */
 	public SaleAgreements(String productCode, String type, DateTime date, Address address, String cost) {
 		super(productCode, type);
 		this.date = date;
@@ -13,6 +14,8 @@ public class SaleAgreements extends Product {
 		this.cost = cost;
 	}
 
+	/** Getter and Setter Methods for SaleAgreements Class */
+	
 	public DateTime getDate() {
 		return date;
 	}
@@ -33,8 +36,15 @@ public class SaleAgreements extends Product {
 		return cost;
 	}
 
-	public void set(Address addrCost) {
+	public void set(String cost) {
 		this.cost = cost;
 	}
+
+	@Override
+	public String toString() {
+		return "SaleAgreements [date=" + date + ", address=" + address + ", cost=" + cost + "]";
+	}
+	
+	
 
 }

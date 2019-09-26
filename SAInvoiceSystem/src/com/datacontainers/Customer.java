@@ -7,7 +7,8 @@ public class Customer {
 	private Person contact;
 	private String customerName;
 	private Address customerAddress;
-
+	
+	/** Creates Customer Constructor with specified attributes */
 	public Customer(String customerCode, String type, Person contact, String name, Address address) {
 		super();
 		this.customerCode = customerCode;
@@ -17,6 +18,8 @@ public class Customer {
 		this.customerAddress = address;
 	}
 
+	/** Getter and Setter Methods for Customer Class */
+	
 	public String getCustomerCode() {
 		return customerCode;
 	}

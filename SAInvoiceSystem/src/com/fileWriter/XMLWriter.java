@@ -9,6 +9,7 @@ import com.thoughtworks.xstream.XStream;
 
 public class XMLWriter {
 
+	/** Writes Person objects in XML format*/
 	public String toXmlStringPerson(ArrayList<Person> xmlPersonArray) {
 		XStream xstream = new XStream();
 		xstream.alias("person", Person.class);
@@ -17,6 +18,7 @@ public class XMLWriter {
 	return xmlString;
 	}
 	
+	/** Writes Customer objects in XML format*/
 	public String toXmlStringCustomer(ArrayList<Customer> xmlCustomerArray) {
 		XStream xstream = new XStream();
 		xstream.alias("customer", Customer.class);
@@ -25,6 +27,7 @@ public class XMLWriter {
 	return xmlString;
 	}
 	
+	/** Writes Product objects in XML format*/
 	public String toXmlStringProduct(ArrayList<Product> xmlProductArray) {
 		XStream xstream = new XStream();
 		xstream.alias("product", Product.class);
