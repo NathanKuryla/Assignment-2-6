@@ -1,21 +1,21 @@
 package com.datacontainers;
 
 public class Amenity extends Product {
-	private String name;
+	private String amenityName;
 	private String cost;
 
-	public Amenity(String productCode, String type, String name, String cost) {
+	public Amenity(String productCode, String type, String amenityName, String cost) {
 		super(productCode, type);
-		this.name = name;
+		this.amenityName = amenityName;
 		this.cost = cost;
 	}
 
 	public String getName() {
-		return name;
+		return amenityName;
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.amenityName = name;
 	}
 
 	public String getCost() {

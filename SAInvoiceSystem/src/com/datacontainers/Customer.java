@@ -1,21 +1,20 @@
 package com.datacontainers;
 
-import java.util.ArrayList;
-
 public class Customer {
+
 	private String customerCode;
 	private String type;
 	private Person contact;
-	private String name;
-	private Address address;
+	private String customerName;
+	private Address customerAddress;
 
 	public Customer(String customerCode, String type, Person contact, String name, Address address) {
 		super();
 		this.customerCode = customerCode;
 		this.type = type;
 		this.contact = contact;
-		this.name = name;
-		this.address = address;
+		this.customerName = name;
+		this.customerAddress = address;
 	}
 
 	public String getCustomerCode() {
@@ -43,18 +42,24 @@ public class Customer {
 	}
 
 	public String getName() {
-		return name;
+		return customerName;
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.customerName = name;
 	}
 
 	public Address getAddress() {
-		return address;
+		return customerAddress;
 	}
 
 	public void setAddress(Address address) {
-		this.address = address;
+		this.customerAddress = address;
+	}
+	
+	@Override
+	public String toString() {
+		return "Customer [customerCode=" + customerCode + ", type=" + type + ", contact=" + contact + ", customerName="
+				+ customerName + ", customerAddress=" + customerAddress + "]";
 	}
 }

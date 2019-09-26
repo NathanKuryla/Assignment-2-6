@@ -1,21 +1,23 @@
 package com.datacontainers;
-import java.util.Date;
+import org.joda.time.DateTime;
 
 public class SaleAgreements extends Product {
-	private Date date;
+	private DateTime date;
 	private Address address;
+	private String cost;
 	
-	public SaleAgreements(String productCode, String type, Date date, Address address) {
+	public SaleAgreements(String productCode, String type, DateTime date, Address address, String cost) {
 		super(productCode, type);
 		this.date = date;
 		this.address = address;
+		this.cost = cost;
 	}
 
-	public Date getDate() {
+	public DateTime getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(DateTime date) {
 		this.date = date;
 	}
 
@@ -25,6 +27,14 @@ public class SaleAgreements extends Product {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+	
+	public String getCost() {
+		return cost;
+	}
+
+	public void set(Address addrCost) {
+		this.cost = cost;
 	}
 
 }

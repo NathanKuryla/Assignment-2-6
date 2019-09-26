@@ -1,15 +1,15 @@
 package com.datacontainers;
-import java.util.Date;
+import org.joda.time.DateTime;
 
 public class LeaseAgreements extends Product {
-	private Date startDate;
-	private Date endDate;
+	private DateTime startDate;
+	private DateTime endDate;
 	private Address address;
-	private Name name;
+	private String name;
 	private String pricePerAppt;
 
-	public LeaseAgreements(String productCode, String type, Date startDate, Date endDate, Address address,
-			Name name, String pricePerAppt) {
+	public LeaseAgreements(String productCode, String type, DateTime startDate, DateTime endDate, Address address,
+			String name, String pricePerAppt) {
 		super(productCode, type);
 		this.startDate = startDate;
 		this.endDate = endDate;
@@ -18,19 +18,19 @@ public class LeaseAgreements extends Product {
 		this.pricePerAppt = pricePerAppt;
 	}
 
-	public Date getStartDate() {
+	public DateTime getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(DateTime startDate) {
 		this.startDate = startDate;
 	}
 
-	public Date getEndDate() {
+	public DateTime getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(Date endDate) {
+	public void setEndDate(DateTime endDate) {
 		this.endDate = endDate;
 	}
 
@@ -42,11 +42,11 @@ public class LeaseAgreements extends Product {
 		this.address = address;
 	}
 
-	public Name getName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(Name name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 

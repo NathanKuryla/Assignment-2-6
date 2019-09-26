@@ -6,9 +6,10 @@ public class Person {
 	private String personCode;
 	private Name name;
 	private Address address;
-	private ArrayList<String> email;
+	//private ArrayList<String> email;
+	private String email;
 
-	public Person(String personCode, Name name, Address address, ArrayList<String> email) {
+	public Person(String personCode, Name name, Address address, /*ArrayList<String>*/ String email) {
 		super();
 		this.personCode = personCode;
 		this.name = name;
@@ -40,12 +41,21 @@ public class Person {
 		this.address = address;
 	}
 
-	public ArrayList<String> getEmail() {
+	public /*ArrayList<String>*/ String getEmail() {
 		return email;
 	}
 
-	public void setEmail(ArrayList<String> email) {
+	public void setEmail(/*ArrayList<String>*/ String email) {
 		this.email = email;
 	}
+
+	@Override
+	public String toString() {
+		return "Person [personCode=" + personCode + ", name=" + name + ", address=" + address + ", email=" + email
+				+ "]";
+	}
+	
+	//public ArrayList<String> readEmail() {
+	//}
 
 }
