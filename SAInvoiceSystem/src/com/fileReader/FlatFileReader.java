@@ -14,7 +14,6 @@ import com.datacontainers.ParkingPass;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import org.joda.time.DateTime;
@@ -26,20 +25,19 @@ public class FlatFileReader {
 	private ArrayList<Customer> customerArray = new ArrayList<Customer>();
 	private ArrayList<Product> productArray = new ArrayList<Product>();
 	private final DateTimeFormatter DATE_FORMATTER = DateTimeFormat.forPattern("yyyy-MM-dd");
-	private final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormat.forPattern("yyy-MM-dd kk:mm");
+	private final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormat.forPattern("yyyy-MM-dd kk:mm");
 
 	/**
-	 * Reads through person invoice files token by token using Scanner and stores
-	 * each token into strings. The strings are then used as attributes to create
-	 * Objects that then help construct the Person Object. Once the Person Object is
-	 * constructed, the the Person objects are added to the personArray that stores
-	 * all the Person Objects read from the file. The method then returns the
-	 * personArray of all the Person objects.
+	 * Uses Scanner to read through the person .dat files and stores each line in the line string.
+	 * Then splits each part of the line up into tokens with the delimiter ";", and
+	 * further splits up each token with specific tokens with the delimiter ",".
+	 * Once the Person Object is constructed, the Person objects are added to the
+	 * personArray that stores all the Person Objects read from the file. The method
+	 * then returns the personArray of all the Person objects.
 	 */
-	public ArrayList<Person> getPersonArray(File personInvoice) throws IOException {
+	public ArrayList<Person> getPersonArray(File personInvoice) {
 		try {
 			Scanner fileReader = new Scanner(personInvoice);
-			ArrayList<String> emails = new ArrayList<String>();
 			while (fileReader.hasNext()) {
 				String line = fileReader.nextLine();
 				String tokens[] = line.split(";");
@@ -53,7 +51,16 @@ public class FlatFileReader {
 				String state = addressTokens[2];
 				String zip = addressTokens[3];
 				String country = addressTokens[4];
-				String emailTokens[] = tokens[3].split(",");
+				/* Loop for adding e-mails **/
+				ArrayList<String> emails = new ArrayList<String>();
+				if (tokens.length > 3) {
+					String emailTokens[] = tokens[3].split(",");
+					for (int i = 0; i < tokens[3].split(",").length; i++) {
+						emails.add(emailTokens[i]);
+					}
+				} else {
+					emails.add("");
+				}
 				Name personName = new Name(lastName, firstName);
 				Address personAddress = new Address(street, city, state, zip, country);
 				Person person = new Person(personCode, personName, personAddress, emails);
@@ -82,14 +89,14 @@ public class FlatFileReader {
 	}
 
 	/**
-	 * Reads through customer invoice files token by token using Scanner and stores
-	 * each token into strings. The strings are then used as attributes to create
-	 * Objects that then help construct the Customer Object. Once the Customer
-	 * Object is constructed, the Customer objects are added to the customerArray
-	 * that stores all the Customer Objects read from the file. The method then
-	 * returns the customerArray of all the Customer objects.
+	 * Uses Scanner to read through the customer .dat files and stores each line in the line
+	 * string. Then splits each part of the line up into tokens with the delimiter
+	 * ";", and further splits up each token with specific tokens with the delimiter
+	 * ",". Once the Customer Object is constructed, the Customer objects are added
+	 * to the customerArray that stores all the Customer Objects read from the file.
+	 * The method then returns the customerArray of all the Customer objects.
 	 */
-	public ArrayList<Customer> getCustomerArray(File customerInvoice) throws IOException {
+	public ArrayList<Customer> getCustomerArray(File customerInvoice) {
 		try {
 			Scanner fileReader = new Scanner(customerInvoice);
 			while (fileReader.hasNext()) {
@@ -97,7 +104,7 @@ public class FlatFileReader {
 				String tokens[] = line.split(";");
 				String customerCode = tokens[0];
 				String type = tokens[1];
-				String contact = tokens[2];
+				String primaryContact = tokens[2];
 				String customerName = tokens[3];
 				String addressTokens[] = tokens[4].split(",");
 				String street = addressTokens[0];
@@ -105,7 +112,7 @@ public class FlatFileReader {
 				String state = addressTokens[2];
 				String zip = addressTokens[3];
 				String country = addressTokens[4];
-				Person person = getPersonFromCode(contact);
+				Person person = getPersonFromCode(primaryContact);
 				Address customerAddress = new Address(street, city, state, zip, country);
 				Customer customer = new Customer(customerCode, type, person, customerName, customerAddress);
 				customerArray.add(customer);
@@ -118,15 +125,16 @@ public class FlatFileReader {
 	}
 
 	/**
-	 * Reads through product invoice files token by token using Scanner and stores
-	 * each token into strings. The strings are then used as attributes to create
-	 * Objects that then help construct the specified Product Object based on the
-	 * type of Product. Once the Product Object is constructed, the Product objects
-	 * are added to the productArray that stores all the Product Objects read from
-	 * the file. The method then returns the productArray of all the Product
-	 * objects.
+	 * Uses Scanner to read through the product .dat files and stores each line in the line string.
+	 * Then splits each part of the line up into tokens with the delimiter ";", and
+	 * further splits up each token with specific tokens with the delimiter ",".
+	 * There isn't just one product, so each product is identified by its type, and
+	 * depending on the type, different tokens are read by the Scanner. Once the
+	 * Product Object is constructed, the Product objects are added to the
+	 * productArray that stores all the Product Objects read from the file. The
+	 * method then returns the productArray of all the Product objects.
 	 */
-	public ArrayList<Product> getProductArray(File productInvoice) throws IOException {
+	public ArrayList<Product> getProductArray(File productInvoice) {
 		try {
 			Scanner fileReader = new Scanner(productInvoice);
 			while (fileReader.hasNext()) {
@@ -139,31 +147,35 @@ public class FlatFileReader {
 					DateTime startDateTime = DATE_FORMATTER.parseDateTime(startDate);
 					String endDate = tokens[3];
 					DateTime endDateTime = DATE_FORMATTER.parseDateTime(endDate);
-					String addressTokens[]  = tokens[4].split(",");
+					String addressTokens[] = tokens[4].split(",");
 					String street = addressTokens[0];
 					String city = addressTokens[1];
 					String state = addressTokens[2];
 					String zip = addressTokens[3];
 					String country = addressTokens[4];
-					String productName = tokens[4];
-					String pricePerAppt = tokens[5];
+					String customerName = tokens[4];
+					String monthlyCost = tokens[5];
 					Address productAddress = new Address(street, city, state, zip, country);
 					LeaseAgreements la = new LeaseAgreements(productCode, type, startDateTime, endDateTime,
-							productAddress, productName, pricePerAppt);
+							productAddress, customerName, monthlyCost);
 					productArray.add(la);
 				}
 				if (type.equals("S")) {
 					String date = tokens[2];
 					DateTime dateTime = DATE_TIME_FORMATTER.parseDateTime(date);
-					String addressTokens[]  = tokens[3].split(",");
+					String addressTokens[] = tokens[3].split(",");
 					String street = addressTokens[0];
 					String city = addressTokens[1];
 					String state = addressTokens[2];
 					String zip = addressTokens[3];
 					String country = addressTokens[4];
-					String cost = tokens[4];
+					String totalCost = tokens[3];
+					String downPayment = tokens[4];
+					String monthlyPayment = tokens[5];
+					String payableMonths = tokens[6];
+					String interestRate = tokens[7];
 					Address productAddress = new Address(street, city, state, zip, country);
-					SaleAgreements sa = new SaleAgreements(productCode, type, dateTime, productAddress, cost);
+					SaleAgreements sa = new SaleAgreements(productCode, type, dateTime, productAddress, totalCost, downPayment, monthlyPayment, payableMonths, interestRate);
 					productArray.add(sa);
 				}
 				if (type.equals("A")) {

@@ -18,7 +18,7 @@ public class Person {
 	}
 
 	/** Getter and Setter Methods for Person Class */
-	
+
 	public String getPersonCode() {
 		return personCode;
 	}
@@ -50,10 +50,5 @@ public class Person {
 	public void setEmail(ArrayList<String> emails) {
 		this.emails = emails;
 	}
-	
-	/** Reads e-mails  */
-	public String readEmail() {
-		return null;
-	}
-	
+
 }

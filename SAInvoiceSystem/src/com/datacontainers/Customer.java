@@ -3,16 +3,16 @@ package com.datacontainers;
 public class Customer {
 
 	private String customerCode;
-	private String type;
+	private String customerType;
 	private Person contact;
 	private String customerName;
 	private Address customerAddress;
 	
 	/** Creates Customer Constructor with specified attributes */
-	public Customer(String customerCode, String type, Person contact, String name, Address address) {
+	public Customer(String customerCode, String customerType, Person contact, String name, Address address) {
 		super();
 		this.customerCode = customerCode;
-		this.type = type;
+		this.customerType = customerType;
 		this.contact = contact;
 		this.customerName = name;
 		this.customerAddress = address;
@@ -28,12 +28,12 @@ public class Customer {
 		this.customerCode = customerCode;
 	}
 
-	public String getType() {
-		return type;
+	public String getCustomerType() {
+		return customerType;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setType(String customerType) {
+		this.customerType = customerType;
 	}
 
 	public Person getPrimaryContact() {
@@ -44,25 +44,19 @@ public class Customer {
 		this.contact = contact;
 	}
 
-	public String getName() {
+	public String getCustomerName() {
 		return customerName;
 	}
 
-	public void setName(String name) {
+	public void setCustomerName(String name) {
 		this.customerName = name;
 	}
 
-	public Address getAddress() {
+	public Address getCustomerAddress() {
 		return customerAddress;
 	}
 
-	public void setAddress(Address address) {
+	public void setCustomerAddress(Address address) {
 		this.customerAddress = address;
-	}
-	
-	@Override
-	public String toString() {
-		return "Customer [customerCode=" + customerCode + ", type=" + type + ", contact=" + contact + ", customerName="
-				+ customerName + ", customerAddress=" + customerAddress + "]";
 	}
 }

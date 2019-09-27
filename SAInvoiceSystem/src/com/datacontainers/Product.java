@@ -2,17 +2,17 @@ package com.datacontainers;
 
 public class Product {
 	private String productCode;
-	private String type;
+	private String productType;
 
 	/** Creates Product Constructor with specified attributes */
-	public Product(String productCode, String type) {
+	public Product(String productCode, String productType) {
 		super();
 		this.productCode = productCode;
-		this.type = type;
+		this.productType = productType;
 	}
-	
+
 	/** Getter and Setter Methods for Product Class */
-	
+
 	public String getProductCode() {
 		return productCode;
 	}
@@ -21,18 +21,12 @@ public class Product {
 		this.productCode = productCode;
 	}
 
-	public String getType() {
-		return type;
+	public String getProductType() {
+		return productType;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setType(String productType) {
+		this.productType = productType;
 	}
-
-	@Override
-	public String toString() {
-		return "Product [productCode=" + productCode + ", type=" + type + "]";
-	}
-
 	
 }

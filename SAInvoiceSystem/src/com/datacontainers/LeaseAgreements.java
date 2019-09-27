@@ -1,26 +1,27 @@
 package com.datacontainers;
+
 import org.joda.time.DateTime;
 
 public class LeaseAgreements extends Product {
 	private DateTime startDate;
 	private DateTime endDate;
 	private Address address;
-	private String name;
-	private String pricePerAppt;
+	private String customerName;
+	private String monthlyCost;
 
 	/** Creates LeaseAgreements Constructor with specified attributes */
 	public LeaseAgreements(String productCode, String type, DateTime startDate, DateTime endDate, Address address,
-			String name, String pricePerAppt) {
+			String customerName, String monthlyCost) {
 		super(productCode, type);
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.address = address;
-		this.name = name;
-		this.pricePerAppt = pricePerAppt;
+		this.customerName = customerName;
+		this.monthlyCost = monthlyCost;
 	}
 
 	/** Getter and Setter Methods for LeaseAgreements Class */
-	
+
 	public DateTime getStartDate() {
 		return startDate;
 	}
@@ -45,26 +46,20 @@ public class LeaseAgreements extends Product {
 		this.address = address;
 	}
 
-	public String getName() {
-		return name;
+	public String getCustomerName() {
+		return customerName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
 	}
 
-	public String getPricePerAppt() {
-		return pricePerAppt;
+	public String getMonthlyCost() {
+		return monthlyCost;
 	}
 
-	public void setPricePerAppt(String pricePerAppt) {
-		this.pricePerAppt = pricePerAppt;
+	public void setMonthlyCost(String monthlyCost) {
+		this.monthlyCost = monthlyCost;
 	}
 
-	@Override
-	public String toString() {
-		return "LeaseAgreements [startDate=" + startDate + ", endDate=" + endDate + ", address=" + address + ", name="
-				+ name + ", pricePerAppt=" + pricePerAppt + "]";
-	}
-	
 }
