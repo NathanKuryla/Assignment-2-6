@@ -18,9 +18,9 @@ public class DataConverter {
 		FlatFileReader fr = new FlatFileReader();
 		
 		/** Imports .dat invoice files in*/
-		File personInvoice = new File("C:\\Users\\Public\\Documents\\Persons.dat");
-		File customerInvoice = new File("C:\\Users\\Public\\Documents\\Customers.dat");
-		File productInvoice = new File("C:\\Users\\Public\\Documents\\Products.dat");
+		File personInvoice = new File("Persons.dat");
+		File customerInvoice = new File("Customers.dat");
+		File productInvoice = new File("Products.dat");
 
 		/** Converts objects into JSON format using JsonWriter class*/
 		JsonWriter jw = new JsonWriter();
