@@ -99,7 +99,8 @@ public class SaleAgreements extends Product {
 		return monthsPaidSoFar;
 	}
 	public double getSubTotal() {
-		subTotal = numberOfUnits * (monthlyPaymentNumber + (totalCostNumber - downPaymentNumber - (monthsPaidSoFar * monthlyPayment))*interestRateNumber);
+		subTotal = numberOfUnits * (monthlyPaymentNumber + (totalCostNumber - downPaymentNumber - (monthsPaidSoFar * monthlyPaymentNumber))*interestRateNumber);
+		return subTotal;
 	}
 	
 	public double getTax() {
