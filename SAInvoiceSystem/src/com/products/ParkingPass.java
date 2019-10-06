@@ -2,6 +2,9 @@ package com.products;
 
 public class ParkingPass extends Product {
 	private String parkingFee;
+	private double tax;
+	private double grandTotal;
+	private double subTotal = Double.parseDouble(parkingFee);
 
 	/** Creates ParkingPass Constructor with specified attributes */
 	public ParkingPass(String productCode, String type, String parkingFee) {
@@ -19,11 +22,22 @@ public class ParkingPass extends Product {
 		this.parkingFee = parkingFee;
 	}
 	
+	public double getSubTotal() {
+		return subTotal;
+	}
+	
 	public double getTax() {
-		
+		tax = subTotal * .04;
+		return subTotal;
 	}
 	
 	public double computeGrandTotal() {
-		
+		grandTotal = subTotal + tax;
+		return grandTotal;
+	}
+	
+	public double computeLeaseGrandTotal() {
+		grandTotal = 0.0;
+		return grandTotal;
 	}
 }
