@@ -1,4 +1,6 @@
-package com.datacontainers;
+package com.products;
+
+import com.datacontainers.Taxable;
 
 abstract public class Product implements Taxable {
 	private String productCode;

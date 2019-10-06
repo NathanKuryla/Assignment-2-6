@@ -1,4 +1,7 @@
-package com.datacontainers;
+package com.customers;
+
+import com.datacontainers.Address;
+import com.datacontainers.Person;
 
 public class LowIncome extends Customer {
 	

@@ -1,4 +1,8 @@
-package com.datacontainers;
+package com.customers;
+
+import com.datacontainers.Address;
+import com.datacontainers.Person;
+import com.datacontainers.Taxable;
 
 abstract public class Customer implements Taxable {
 

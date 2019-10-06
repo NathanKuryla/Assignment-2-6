@@ -1,4 +1,4 @@
-package com.datacontainers;
+package com.products;
 
 public class Amenity extends Product {
 	private String amenityName;

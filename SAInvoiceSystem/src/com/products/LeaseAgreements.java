@@ -1,6 +1,8 @@
-package com.datacontainers;
+package com.products;
 
 import org.joda.time.DateTime;
+
+import com.datacontainers.Address;
 
 public class LeaseAgreements extends Product {
 	private DateTime startDate;
