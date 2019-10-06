@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import com.datacontainers.Amenity;
 import com.datacontainers.Customer;
 import com.datacontainers.LeaseAgreements;
-import com.datacontainers.ParkingPass;
 import com.datacontainers.Person;
 import com.datacontainers.Product;
 import com.datacontainers.SaleAgreements;
+import com.products.ParkingPass;
 import com.thoughtworks.xstream.XStream;
 
 public class XMLWriter {

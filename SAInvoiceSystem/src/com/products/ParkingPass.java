@@ -1,4 +1,4 @@
-package com.datacontainers;
+package com.products;
 
 public class ParkingPass extends Product {
 	private String parkingFee;
