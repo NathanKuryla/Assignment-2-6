@@ -11,6 +11,16 @@ public class SaleAgreements extends Product {
 	private String monthlyPayment;
 	private String payableMonths;
 	private String interestRate;
+	private double numberOfUnits;
+	private double subTotal;
+	private double monthsPaidSoFar;
+	private double tax;
+	private double grandTotal;
+	private double totalCostNumber = Double.parseDouble(totalCost);
+	private double downPaymentNumber = Double.parseDouble(downPayment);
+	private double monthlyPaymentNumber = Double.parseDouble(monthlyPayment);
+	private double payableMonthsNUmber = Double.parseDouble(payableMonths);
+	private double interestRateNumber = Double.parseDouble(interestRate);
 	
 	
 	/** Creates SaleAgreements Constructor with specified attributes */
@@ -84,12 +94,22 @@ public class SaleAgreements extends Product {
 		this.interestRate = interestRate;
 	}
 	
+	// Have to use dates to find
+	public double getMonthsPaidSoFar() {
+		return monthsPaidSoFar;
+	}
+	public double getSubTotal() {
+		subTotal = numberOfUnits * (monthlyPaymentNumber + (totalCostNumber - downPaymentNumber - (monthsPaidSoFar * monthlyPayment))*interestRateNumber);
+	}
+	
 	public double getTax() {
-		
+		tax = subTotal * .06;
+		return tax;
 	}
 	
 	public double computeGrandTotal() {
-		
+		grandTotal = tax + subTotal;
+		return grandTotal;
 	}
 
 }
