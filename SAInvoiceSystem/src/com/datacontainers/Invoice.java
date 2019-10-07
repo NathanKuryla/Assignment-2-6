@@ -1,17 +1,20 @@
 package com.datacontainers;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import org.joda.time.DateTime;
+
+import com.customers.Customer;
+import com.products.Product;
 
 public class Invoice {
 private String InvoiceCode;
 private DateTime InvoiceDate;
 private Customer customer;
 private Person realtor;
-private List<Product> productList;
+private ArrayList<Product> productList;
 
-public Invoice(String invoiceCode, DateTime invoiceDate, Customer customer, Person realtor, List<Product> productList) {
+public Invoice(String invoiceCode, Customer customer, Person realtor,  DateTime invoiceDate, ArrayList<Product> productList) {
 	super();
 	InvoiceCode = invoiceCode;
 	InvoiceDate = invoiceDate;
@@ -52,11 +55,11 @@ public void setRealtor(Person realtor) {
 	this.realtor = realtor;
 }
 
-public List<Product> getProductList() {
+public ArrayList<Product> getProductList() {
 	return productList;
 }
 
-public void setProductList(List<Product> productList) {
+public void setProductList(ArrayList<Product> productList) {
 	this.productList = productList;
 }
 

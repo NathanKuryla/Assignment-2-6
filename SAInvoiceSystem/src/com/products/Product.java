@@ -32,5 +32,6 @@ abstract public class Product implements Taxable {
 	}
 	
 	public abstract double getTax();
+	public abstract double getSubTotal();
 	public abstract double computeGrandTotal();
 }

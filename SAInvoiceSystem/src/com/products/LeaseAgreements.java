@@ -10,6 +10,9 @@ public class LeaseAgreements extends Product {
 	private Address address;
 	private String customerName;
 	private String monthlyCost;
+	private double tax;
+	private double subTotal;
+	private double grandTotal;
 
 	/** Creates LeaseAgreements Constructor with specified attributes */
 	public LeaseAgreements(String productCode, String type, DateTime startDate, DateTime endDate, Address address,
@@ -64,11 +67,18 @@ public class LeaseAgreements extends Product {
 		this.monthlyCost = monthlyCost;
 	}
 
+	// Will need to figure out with date class
+	public double getSubTotal() {
+		return subTotal;
+	}
+	
 	public double getTax() {
-		
+		tax = subTotal * .06;
+		return tax;
 	}
 	
 	public double computeGrandTotal() {
-		
+		grandTotal = tax + subTotal;
+		return grandTotal;
 	}
 }

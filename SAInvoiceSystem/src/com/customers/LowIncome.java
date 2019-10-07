@@ -7,13 +7,10 @@ public class LowIncome extends Customer {
 	
 	private double tax;
 	private double fee;
+	private double discount;
 
 	public LowIncome(String customerCode, String customerType, Person contact, String name, Address address) {
 		super(customerCode, customerType, contact, name, address);
-	}
-	
-	public double getSub() {
-		
 	}
 	
 	public double getTax() {
@@ -22,7 +19,7 @@ public class LowIncome extends Customer {
 	}
 	
 	public double getDiscount() {
-		
+		return discount;
 	}
 	
 	public double getAdditionalFee() {

@@ -2,12 +2,12 @@ package com.fileWriter;
 
 import java.util.ArrayList;
 
-import com.datacontainers.Amenity;
-import com.datacontainers.Customer;
-import com.datacontainers.LeaseAgreements;
+import com.products.Amenity;
+import com.customers.Customer;
+import com.products.LeaseAgreements;
 import com.datacontainers.Person;
-import com.datacontainers.Product;
-import com.datacontainers.SaleAgreements;
+import com.products.Product;
+import com.products.SaleAgreements;
 import com.products.ParkingPass;
 import com.thoughtworks.xstream.XStream;
 

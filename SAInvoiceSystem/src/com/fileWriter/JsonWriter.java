@@ -1,8 +1,8 @@
 package com.fileWriter;
 
-import com.datacontainers.Customer;
+import com.customers.Customer;
 import com.datacontainers.Person;
-import com.datacontainers.Product;
+import com.products.Product;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;

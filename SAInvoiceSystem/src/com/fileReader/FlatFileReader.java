@@ -3,14 +3,16 @@ package com.fileReader;
 import java.util.Scanner;
 
 import com.datacontainers.Person;
-import com.datacontainers.Product;
-import com.datacontainers.SaleAgreements;
+import com.products.SaleAgreements;
 import com.products.ParkingPass;
+import com.products.Product;
+import com.customers.Customer;
+import com.customers.General;
+import com.customers.LowIncome;
 import com.datacontainers.Address;
-import com.datacontainers.Amenity;
-import com.datacontainers.Customer;
+import com.products.Amenity;
 import com.datacontainers.Invoice;
-import com.datacontainers.LeaseAgreements;
+import com.products.LeaseAgreements;
 import com.datacontainers.Name;
 
 import java.io.File;
@@ -116,16 +118,29 @@ public class FlatFileReader {
 				String country = addressTokens[4];
 				Person person = getPersonFromCode(primaryContact);
 				Address customerAddress = new Address(street, city, state, zip, country);
-				Customer customer = new Customer(customerCode, type, person, customerName, customerAddress);
-				customerArray.add(customer);
+				if (type.equals("G")) {
+					General generalCustomer = new General(customerCode, type, person, customerName, customerAddress);
+					customerArray.add(generalCustomer);
+				}
+				if (type.equals("L")) {
+					LowIncome lowIncomeCustomer = new LowIncome(customerCode, type, person, customerName, customerAddress);
+					customerArray.add(lowIncomeCustomer);
+				}
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		return customerArray;
-
 	}
 
+	public Customer getCustomerFromCode(String customerCode) {
+		for (Customer c : customerArray) {
+			if (c.getCustomerCode().equals(customerCode)) {
+				return c;
+			}
+		}
+		return null;
+	}
 	/**
 	 * Uses Scanner to read through the product .dat files and stores each line in the line string.
 	 * Then splits each part of the line up into tokens with the delimiter ";", and
@@ -198,8 +213,47 @@ public class FlatFileReader {
 		return productArray;
 	}
 	
-	public ArrayList<Invoice> getInvoiceArray (File invoice) {
-		
+	public Product getProductFromCode(String productCode) {
+		for (Product p : productArray) {
+			if (p.getProductCode().equals(productCode)) {
+				return p;
+			}
+		}
+		return null;
+	}
+	
+	public ArrayList<Invoice> getInvoiceArray (File file) {
+		try {
+			Scanner fileReader = new Scanner(file);
+			while (fileReader.hasNext()) {
+				String line = fileReader.nextLine();
+				String tokens[] = line.split(";");
+				String invoiceCode = tokens[0];
+				String customerCode = tokens[1];
+				Customer customer = getCustomerFromCode(customerCode);
+				String realtorCode = tokens[2];
+				Person realtor = getPersonFromCode(realtorCode);
+				String date = tokens[3];
+				DateTime invoiceDate = DATE_FORMATTER.parseDateTime(date);
+				/* Loop for adding products **/
+				ArrayList<Product> productList = new ArrayList<Product>();
+				//Find out how to deal with colon stuff
+				if (tokens.length > 4) {
+					String productTokens[] = tokens[4].split(",");
+					for (int i = 0; i < tokens[4].split(",").length; i++) {
+						Product product = getProductFromCode(productTokens[i]); 
+						productList.add(product);
+					}
+				} else {
+					productList.add(null);
+				}
+				Invoice invoice = new Invoice(invoiceCode, customer, realtor, invoiceDate, productList);
+				invoiceArray.add(invoice);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return invoiceArray;
 	}
 
 }
