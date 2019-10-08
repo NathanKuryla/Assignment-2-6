@@ -9,8 +9,8 @@ public class General extends Customer {
 	private double discount;
 	private double fee;
 
-	public General(String customerCode, String customerType, Person contact, String name, Address address) {
-		super(customerCode, customerType, contact, name, address);
+	public General(String customerCode, String customerType, Person contact, String name, Address address, ArrayList<String> products) {
+		super(customerCode, customerType, contact, name, address, products);
 	}
 	
 	@Override
@@ -20,13 +20,13 @@ public class General extends Customer {
 	
 	@Override
 	public double getDiscount() {
-		discount = 0.0;
+		discount = 0.00;
 		return discount;
 	}
 	
 	@Override
 	public double getAdditionalFee() {
-		fee = 0.0;
+		fee = 0.00;
 		return fee;
 	}
 }

@@ -13,13 +13,14 @@ abstract public class Customer implements Taxable {
 	private Address customerAddress;
 	
 	/** Creates Customer Constructor with specified attributes */
-	public Customer(String customerCode, String customerType, Person contact, String name, Address address) {
+	public Customer(String customerCode, String customerType, Person contact, String name, Address address, ArrayList<String> products) {
 		super();
 		this.customerCode = customerCode;
 		this.customerType = customerType;
 		this.contact = contact;
 		this.customerName = name;
 		this.customerAddress = address;
+		this.products = products
 	}
 
 	/** Getter and Setter Methods for Customer Class */
@@ -62,6 +63,14 @@ abstract public class Customer implements Taxable {
 
 	public void setCustomerAddress(Address address) {
 		this.customerAddress = address;
+	}
+	
+	public products getProducts() {
+		return products
+	}
+	
+	public void setProducts(ArrayList<String> products) {
+		this.products = products;
 	}
 	public abstract double getTax();
 	public abstract double getDiscount();
