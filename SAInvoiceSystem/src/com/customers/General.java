@@ -9,7 +9,7 @@ public class General extends Customer {
 	private double discount;
 	private double fee;
 
-	public General(String customerCode, String customerType, Person contact, String name, Address address, ArrayList<String> products) {
+	public General(String customerCode, String customerType, Person contact, String name, Address address, ArrayList<Product> products) {
 		super(customerCode, customerType, contact, name, address, products);
 	}
 	

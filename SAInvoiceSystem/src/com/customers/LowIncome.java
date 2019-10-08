@@ -9,7 +9,7 @@ public class LowIncome extends Customer {
 	private double fee;
 	private double discount;
 
-	public LowIncome(String customerCode, String customerType, Person contact, String name, Address address, ArrayList<String> products) {
+	public LowIncome(String customerCode, String customerType, Person contact, String name, Address address, ArrayList<Product> products) {
 		super(customerCode, customerType, contact, name, address, products);
 	}
 	
