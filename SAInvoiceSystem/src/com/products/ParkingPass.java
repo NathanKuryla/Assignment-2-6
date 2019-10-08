@@ -30,13 +30,8 @@ public class ParkingPass extends Product {
 	/** Methods used to find calculated values */
 	
 	public double getTax() {
-		tax = subTotal * .04;
+		tax = 1.04;
 		return subTotal;
-	}
-	
-	public double computeGrandTotal() {
-		grandTotal = subTotal + tax;
-		return grandTotal;
 	}
 	
 	public double computeLeaseGrandTotal() {

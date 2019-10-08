@@ -14,7 +14,7 @@ abstract public class Customer implements Taxable {
 	private ArrayList products;
 	
 	/** Creates Customer Constructor with specified attributes */
-	public Customer(String customerCode, String customerType, Person contact, String name, Address address, ArrayList<Product> products) {
+	public Customer(String customerCode, String customerType, Person contact, String name, Address address) {
 		super();
 		this.customerCode = customerCode;
 		this.customerType = customerType;

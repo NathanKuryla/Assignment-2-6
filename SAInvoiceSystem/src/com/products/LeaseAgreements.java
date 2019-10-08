@@ -73,12 +73,7 @@ public class LeaseAgreements extends Product {
 	}
 	
 	public double getTax() {
-		tax = subTotal * .06;
+		tax = 1.06;
 		return tax;
-	}
-	
-	public double computeGrandTotal() {
-		grandTotal = tax + subTotal;
-		return grandTotal;
 	}
 }

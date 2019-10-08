@@ -37,17 +37,7 @@ public class Amenity extends Product {
 	}
 	
 	public double getTax() {
-		tax = subTotal * .04;
+		tax = 1.04;
 		return tax;
-	}
-	
-	public double computeGrandTotal() {
-		grandTotal = subTotal + tax;
-		return grandTotal;
-	}
-	
-	public double computeDiscountedGrandTotal() {
-		grandTotal = (subTotal + tax) * .95;
-		return grandTotal;
 	}
 }
