@@ -26,6 +26,9 @@ public class ParkingPass extends Product {
 		return subTotal;
 	}
 	
+	
+	/** Methods used to find calculated values */
+	
 	public double getTax() {
 		tax = subTotal * .04;
 		return subTotal;
