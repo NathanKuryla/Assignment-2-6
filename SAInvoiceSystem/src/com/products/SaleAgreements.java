@@ -19,7 +19,7 @@ public class SaleAgreements extends Product {
 	private double totalCostNumber = Double.parseDouble(totalCost);
 	private double downPaymentNumber = Double.parseDouble(downPayment);
 	private double monthlyPaymentNumber = Double.parseDouble(monthlyPayment);
-	private double payableMonthsNUmber = Double.parseDouble(payableMonths);
+	private double payableMonthsNumber = Double.parseDouble(payableMonths);
 	private double interestRateNumber = Double.parseDouble(interestRate);
 	
 	
