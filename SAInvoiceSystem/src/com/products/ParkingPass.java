@@ -30,7 +30,7 @@ public class ParkingPass extends Product {
 	/** Methods used to find calculated values */
 	
 	public double getTax() {
-		tax = 1.04;
+		tax = 0.04;
 		return subTotal;
 	}
 	

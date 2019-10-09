@@ -104,7 +104,7 @@ public class SaleAgreements extends Product {
 	}
 	
 	public double getTax() {
-		tax = 1.06;
+		tax = 0.06;
 		return tax;
 	}
 }

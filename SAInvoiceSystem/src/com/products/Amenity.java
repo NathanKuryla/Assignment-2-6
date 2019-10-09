@@ -37,7 +37,7 @@ public class Amenity extends Product {
 	}
 	
 	public double getTax() {
-		tax = 1.04;
+		tax = 0.04;
 		return tax;
 	}
 }

@@ -14,7 +14,7 @@ public class LowIncome extends Customer {
 	}
 	
 	@Override
-	public double getTax() {
+	public double getTax(Product product) {
 		tax = 0.00;
 		return tax;
 	}
@@ -30,6 +30,5 @@ public class LowIncome extends Customer {
 		fee = 50.75;
 		return fee;
 	}
-	
 	
 }

@@ -20,7 +20,7 @@ public class General extends Customer {
 	}
 	
 	@Override
-	public double getDiscount() {
+	public double getDiscount(Product product) {
 		discount = 0.00;
 		return discount;
 	}
