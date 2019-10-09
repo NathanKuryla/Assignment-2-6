@@ -26,11 +26,11 @@ abstract public class Customer implements Taxable extends Person {
 
 	/** Getter and Setter Methods for Customer Class */
 	
-	public String getCustomerCode() {
+	public String getCode() {
 		return customerCode;
 	}
 
-	public void setCustomerCode(String customerCode) {
+	public void setCode(String customerCode) {
 		this.customerCode = customerCode;
 	}
 
@@ -42,19 +42,19 @@ abstract public class Customer implements Taxable extends Person {
 		this.customerType = customerType;
 	}
 
-	public Person getPrimaryContact() {
+	public Person getContact() {
 		return contact;
 	}
 
-	public void setPrimaryContact(Person contact) {
+	public void setContact(Person contact) {
 		this.contact = contact;
 	}
 
-	public String getCustomerName() {
+	public String getName() {
 		return customerName;
 	}
 
-	public void setCustomerName(String name) {
+	public void setName(String name) {
 		this.customerName = name;
 	}
 

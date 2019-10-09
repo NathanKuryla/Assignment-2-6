@@ -15,11 +15,11 @@ abstract public class Product implements Taxable {
 
 	/** Getter and Setter Methods for Product Class */
 
-	public String getProductCode() {
+	public String getCode() {
 		return productCode;
 	}
 
-	public void setProductCode(String productCode) {
+	public void setCode(String productCode) {
 		this.productCode = productCode;
 	}
 
