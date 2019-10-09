@@ -23,19 +23,19 @@ public Invoice(String invoiceCode, Customer customer, Person realtor,  DateTime 
 	this.productList = productList;
 }
 
-public String getInvoiceCode() {
+public String getCode() {
 	return InvoiceCode;
 }
 
-public void setInvoiceCode(String invoiceCode) {
+public void setCode(String invoiceCode) {
 	InvoiceCode = invoiceCode;
 }
 
-public DateTime getInvoiceDate() {
+public DateTime getDate() {
 	return InvoiceDate;
 }
 
-public void setInvoiceDate(DateTime invoiceDate) {
+public void setDate(DateTime invoiceDate) {
 	InvoiceDate = invoiceDate;
 }
 

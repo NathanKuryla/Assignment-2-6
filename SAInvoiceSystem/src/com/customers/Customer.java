@@ -68,5 +68,5 @@ abstract public class Customer implements Taxable extends Person {
 	
 	public abstract double getTax();
 	public abstract double getDiscount();
-	public abstract double getAdditionalFee();
+	public abstract double getFee();
 }
