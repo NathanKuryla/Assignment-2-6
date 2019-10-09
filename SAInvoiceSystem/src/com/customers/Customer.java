@@ -14,7 +14,7 @@ abstract public class Customer implements Taxable {
 	private ArrayList products;
 	
 	/** Creates Customer Constructor with specified attributes */
-	public Customer(String customerCode, String customerType, Person contact, String name, Address address) {
+	public Customer(String customerCode, String customerType, Person contact, Name name, Address address) {
 		super();
 		this.customerCode = customerCode;
 		this.customerType = customerType;
@@ -66,13 +66,6 @@ abstract public class Customer implements Taxable {
 		this.customerAddress = address;
 	}
 	
-	public products getProducts() {
-		return products
-	}
-	
-	public void setProducts(ArrayList<String> products) {
-		this.products = products;
-	}
 	public abstract double getTax();
 	public abstract double getDiscount();
 	public abstract double getAdditionalFee();

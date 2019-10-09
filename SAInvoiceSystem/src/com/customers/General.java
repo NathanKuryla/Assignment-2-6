@@ -9,12 +9,13 @@ public class General extends Customer {
 	private double discount;
 	private double fee;
 
-	public General(String customerCode, String customerType, Person contact, String name, Address address) {
+	public General(String customerCode, String customerType, Person contact, Name name, Address address) {
 		super(customerCode, customerType, contact, name, address);
 	}
 	
 	@Override
-	public double getTax() {
+	public double getTax(Product product) {
+		tax = product.getTax() * product.getSubTotal();
 		return tax;
 	}
 	
@@ -25,7 +26,7 @@ public class General extends Customer {
 	}
 	
 	@Override
-	public double getAdditionalFee() {
+	public double getFee() {
 		fee = 0.00;
 		return fee;
 	}

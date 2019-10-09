@@ -9,7 +9,7 @@ public class LowIncome extends Customer {
 	private double fee;
 	private double discount;
 
-	public LowIncome(String customerCode, String customerType, Person contact, String name, Address address) {
+	public LowIncome(String customerCode, String customerType, Person contact, Name name, Address address) {
 		super(customerCode, customerType, contact, name, address);
 	}
 	
@@ -20,12 +20,13 @@ public class LowIncome extends Customer {
 	}
 	
 	@Override
-	public double getDiscount() {
+	public double getDiscount(Product product) {
+		discount = 0.10 * product.getSubTotal();
 		return discount;
 	}
 	
 	@Override
-	public double getAdditionalFee() {
+	public double getFee() {
 		fee = 50.75;
 		return fee;
 	}
