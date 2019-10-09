@@ -8,16 +8,16 @@ import com.customers.Customer;
 import com.products.Product;
 
 public class Invoice {
-private String InvoiceCode;
-private DateTime InvoiceDate;
+private String invoiceCode;
+private DateTime invoiceDate;
 private Customer customer;
 private Person realtor;
 private ArrayList<Product> productList;
 
 public Invoice(String invoiceCode, Customer customer, Person realtor,  DateTime invoiceDate, ArrayList<Product> productList) {
 	super();
-	InvoiceCode = invoiceCode;
-	InvoiceDate = invoiceDate;
+	this.invoiceCode = invoiceCode;
+	this.invoiceDate = invoiceDate;
 	this.customer = customer;
 	this.realtor = realtor;
 	this.productList = productList;
