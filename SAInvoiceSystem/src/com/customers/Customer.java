@@ -4,7 +4,7 @@ import com.datacontainers.Address;
 import com.datacontainers.Person;
 import com.datacontainers.Taxable;
 
-abstract public class Customer implements Taxable {
+abstract public class Customer implements Taxable extends Person {
 
 	private String customerCode;
 	private String customerType;
@@ -34,7 +34,7 @@ abstract public class Customer implements Taxable {
 		this.customerCode = customerCode;
 	}
 
-	public String getCustomerType() {
+	public String getType() {
 		return customerType;
 	}
 

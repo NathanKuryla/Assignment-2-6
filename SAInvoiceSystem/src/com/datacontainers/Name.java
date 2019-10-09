@@ -13,19 +13,19 @@ public class Name {
 
 	/** Getter and Setter Methods for Name Class */
 	
-	public String getFirstName() {
+	public String getFirst() {
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) {
+	public void setFirst(String firstName) {
 		this.firstName = firstName;
 	}
 
-	public String getLastName() {
+	public String getLast() {
 		return lastName;
 	}
 
-	public void setLastName(String lastName) {
+	public void setLast(String lastName) {
 		this.lastName = lastName;
 	}
 
