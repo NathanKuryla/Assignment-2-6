@@ -33,7 +33,7 @@ public class Amenity extends Product {
 	}
 	
 	public double getSubTotal() {
-		return subTotal;
+		return cost;
 	}
 	
 	public double getTax() {

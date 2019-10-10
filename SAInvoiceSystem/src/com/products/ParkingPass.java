@@ -31,7 +31,7 @@ public class ParkingPass extends Product {
 	
 	public double getTax() {
 		tax = 0.04;
-		return subTotal;
+		return tax;
 	}
 	
 	public double computeLeaseGrandTotal() {
