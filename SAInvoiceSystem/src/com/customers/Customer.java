@@ -4,7 +4,7 @@ import com.datacontainers.Address;
 import com.datacontainers.Person;
 import com.datacontainers.Taxable;
 
-abstract public class Customer implements Taxable extends Person {
+abstract public class Customer implements Taxable {
 
 	private String customerCode;
 	private String customerType;

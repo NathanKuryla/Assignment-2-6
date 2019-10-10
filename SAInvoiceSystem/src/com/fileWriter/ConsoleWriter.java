@@ -1,8 +1,8 @@
 package com.fileWriter;
 
 public class ConsoleWriter {
-	//Look at Lab 4 Library stuff to see how they formatted stuff.
-	public void static main() {
+
+	public void printInvoice() {
 	
 		FlatFileReader reader = new FlatFileReader;
 		
@@ -69,6 +69,7 @@ public class ConsoleWriter {
 		System.out.println("==========================================================================================================================");
 		
 		
+		
 		/** Writer for Individual Invoices */
 	
 		for(customerArray: k) {
@@ -103,7 +104,16 @@ public class ConsoleWriter {
 			System.out.println("Code\tItem\t\t\t\tSubtotal\tTax\tTotal");
 			for(products: n) {
 				item = reader.getProductFromCode();
-				System.out.println(n.getCode()+"\t"+item.
+				if(item.getType().equals("A")) {
+					System.out.println(n.getCode()+"\t"+n.getName()+" (");
+				}
+				else if(item.getType().equals("P")) {
+					
+				}
+				else if(item.getType().equals("S")) {
+					
+				}
+				else 
 			}
 		}
 }
